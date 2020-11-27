@@ -2,7 +2,7 @@
 layout: post
 title: "《redis开发与运维》笔记(三)——Jedis是如何实现RESP？？？"
 date: 2020-11-27 
-description: "Jedis是如何实现RESP？？？"
+description: "《redis开发与运维》笔记(三)——Jedis是如何实现RESP？？？"
 tag: Redis
 --- 
 
