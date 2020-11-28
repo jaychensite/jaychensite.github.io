@@ -69,7 +69,7 @@ Redis支持两种持久化分别是RDB与AOF。当redis重启时会读取持久�
   
    RDB文件保存在dir配置指定的目录下，文件名通过dbfilename配置指定。
    
-   可以通过执行**config set dir【bewDir】**和 **config set dbfilename【newFileName】**运行期动态执行
+   可以通过执行**config set dir【bewDir**和 **config set dbfilename【newFileName**运行期动态执行
    
    当下次运行时RDB文件会保存在新目录。
    
