@@ -75,7 +75,7 @@ Redis支持两种持久化分别是RDB与AOF。当redis重启时会读取持久�
    
 * 压缩
 
-  Redis默认采用LZF算法对生成的RDB文件做压缩处理，压缩后的文件远远小于内存大小，默认开启。可以通过参数config set rdbcompression{yes|no}动态修改。
+  Redis默认采用LZF算法对生成的RDB文件做压缩处理，压缩后的文件远远小于内存大小，默认开启。可以通过参数config set rdbcompression{yes/no}动态修改。
   
   **小提示**
  
