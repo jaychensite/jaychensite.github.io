@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "redis 的过期策略都有哪些？内存淘汰机制都有哪些？手写一下 LRU 代码实现？"
-date: 2020-11-24 
+date: 2020-11-1 
 description: "redis 的过期策略都有哪些？内存淘汰机制都有哪些？手写一下 LRU 代码实现？"
 tag: Redis
 ---   
