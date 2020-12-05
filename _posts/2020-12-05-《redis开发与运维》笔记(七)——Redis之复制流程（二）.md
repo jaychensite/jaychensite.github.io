@@ -80,7 +80,7 @@ master_link_status:up
 
 ### 总结
 
-本次分析了Redis的复制流程，以及还提到了Psync复制机制，至于什么是Psync，因为篇幅的原因，下次在说把。
+本次分析了Redis的复制流程，以及还提到了Psync复制机制，至于什么是Psync，因为篇幅的原因，下次在说吧。
 
 
 
