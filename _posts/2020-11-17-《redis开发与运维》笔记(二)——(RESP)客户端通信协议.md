@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "《redis开发与运维》笔记(二)——(RESP)客户端通信协议"
-date: 2020-11-26 
+date: 2020-11-17 
 description: "《redis开发与运维》笔记(二)——(RESP)客户端通信协议"
 tag: Redis
 --- 
