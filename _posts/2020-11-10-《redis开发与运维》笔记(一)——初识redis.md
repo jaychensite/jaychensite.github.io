@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "《redis开发与运维》笔记(一)——初识redis"
-date: 2020-11-25 
+date: 2020-11-10 
 description: "《redis开发与运维》笔记(一)——初识redis"
 tag: Redis
 --- 
