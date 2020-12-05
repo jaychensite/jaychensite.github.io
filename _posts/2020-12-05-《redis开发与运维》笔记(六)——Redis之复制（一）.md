@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "《redis开发与运维》笔记(六)——Redis之复制（一）"
+title: "《redis开发与运维》笔记(六)——Redis之复制介绍（一）"
 date: 2020-12-05 
-description: "redis开发与运维》笔记(六)——Redis之复制（一）"
+description: "redis开发与运维》笔记(六)——Redis之复制介绍（一）"
 tag: Redis
 --- 
 
