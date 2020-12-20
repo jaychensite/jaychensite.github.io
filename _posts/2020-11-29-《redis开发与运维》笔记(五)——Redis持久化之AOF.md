@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "《redis开发与运维》笔记(五)——Redis持久化之AOF"
-date: 2020-11-28 
+date: 2020-11-29
 description: "《redis开发与运维》笔记(五)——Redis持久化之AOF"
 tag: Redis
 --- 
