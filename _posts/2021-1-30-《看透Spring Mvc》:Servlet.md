@@ -57,19 +57,19 @@ public interface Servlet {
 
 * init
     
-    实例化**servlet**，**init**方法在容器启动时被容器调用（当**load-on-startup**设置为负数或者不设置时会在**Servlet**第一次用到时才被调用）然后**servlet**才能接收任何请求。
+    实例化servlet，init方法在容器启动时被容器调用（当load-on-startup设置为负数或者不设置时会在Servlet第一次用到时才被调用）然后servlet才能接收任何请求。
 
 * getServletConfig
 
-    用于获取 **ServletConfig**。细心的你会发现在执行**init**方法时传入了 **ServletConfig**。那么 **ServletConfig** 是干嘛的了？？？但从名称来看就能猜出来 **ServletConfig** 是和 **Servlet** 的配置有关系。我们从开头的配置文件中可以发现 **Servlet** 标签配置得有 <init-param> ，其实配置 <init-param> 的参数就保存在 **ServletConfig**中。**DispatcherServlet**通过 **ServletConfig** 接口中的方法，就能获取到 **contextConfigLocation** 对应的值。
+    用于获取ServletConfig。细心的你会发现在执行init方法时传入了ServletConfig。那么ServletConfig 是干嘛的了？？？但从名称来看就能猜出来ServletConfig 是和Servlet的配置有关系。我们从开头的配置文件中可以发现Servlet标签配置得有 init-param ，其实配置 init-param 的参数就保存在ServletConfig中。DispatcherServlet通过ServletConfig接口中的方法，就能获取到contextConfigLocation对应的值。
 
 * service
 
-    **service** 方法用于处理请求。
+    service方法用于处理请求。
     
 * destroy
 
-    **destroy**主要用于在**Servlet**销毁（一般指关闭服务器）时释放一些资源，也只会调用一次。
+    destroy主要用于在Servlet销毁（一般指关闭服务器）时释放一些资源，也只会调用一次。
 
 接下来看看**ServletConfig**接口定义    
     
