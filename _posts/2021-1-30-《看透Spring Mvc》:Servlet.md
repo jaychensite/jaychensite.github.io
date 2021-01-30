@@ -61,7 +61,7 @@ public interface Servlet {
 
 * getServletConfig
 
-    用于获取 **ServletConfig**。细心的你会发现在执行**init**方法时传入了 **ServletConfig**。那么 **ServletConfig** 是干嘛的了？？？但从名称来看就能猜出来 **ServletConfig** 是和 **Servlet** 的配置有关系。我们从开头的配置文件中可以发现 **Servlet** 标签配置得有 **<init-param>** ，其实配置 **<init-param>** 的参数就保存在 **ServletConfig**中。**DispatcherServlet**通过 **ServletConfig** 接口中的方法，就能获取到 **contextConfigLocation** 对应的值。
+    用于获取 **ServletConfig**。细心的你会发现在执行**init**方法时传入了 **ServletConfig**。那么 **ServletConfig** 是干嘛的了？？？但从名称来看就能猜出来 **ServletConfig** 是和 **Servlet** 的配置有关系。我们从开头的配置文件中可以发现 **Servlet** 标签配置得有 <init-param> ，其实配置 <init-param> 的参数就保存在 **ServletConfig**中。**DispatcherServlet**通过 **ServletConfig** 接口中的方法，就能获取到 **contextConfigLocation** 对应的值。
 
 * service
 
