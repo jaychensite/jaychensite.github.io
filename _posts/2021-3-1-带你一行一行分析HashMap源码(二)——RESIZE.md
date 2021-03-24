@@ -1,8 +1,10 @@
+---
 layout: post
 title: "带你一行一行分析HashMap源码(二)——RESIZE"
 date: 2021-3-1
 description: "带你一行一行分析HashMap源码(二)——RESIZE"
 tag: Java基础
+---
 
 #### 思考为什么需要扩容？？？
 
