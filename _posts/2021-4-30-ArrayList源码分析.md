@@ -37,13 +37,13 @@ list.add("test");
 ##### 属性与构造器
 
 ```java
-		// 数组默认大小
-		private static final int DEFAULT_CAPACITY = 10;
+    // 数组默认大小
+    private static final int DEFAULT_CAPACITY = 10;
 
     /**
      * Shared empty array instance used for empty instances.
      */
-		// 空数组
+    // 空数组
     private static final Object[] EMPTY_ELEMENTDATA = {};
 
     /**
@@ -51,9 +51,9 @@ list.add("test");
      * distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
      * first element is added.
      */
-		// 这也是一个空数组（用于默认大小的空实列）
-		// 这里为什么会说用于默认大小的空实列，在添加元素时，确定数组大小时，会进行判断
-		// elementData是否等于DEFAULTCAPACITY_EMPTY_ELEMENTDATA，如果条件成立则使用默认大小（DEFAULT_CAPACITY）
+    // 这也是一个空数组（用于默认大小的空实列）
+    // 这里为什么会说用于默认大小的空实列，在添加元素时，确定数组大小时，会进行判断
+    // elementData是否等于DEFAULTCAPACITY_EMPTY_ELEMENTDATA，如果条件成立则使用默认大小（DEFAULT_CAPACITY）
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
 
     /**
@@ -62,7 +62,7 @@ list.add("test");
      * empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
      * will be expanded to DEFAULT_CAPACITY when the first element is added.
      */
-		// 储存元素的数组
+    // 储存元素的数组
     transient Object[] elementData; // non-private to simplify nested class access
 
     /**
@@ -70,34 +70,34 @@ list.add("test");
      *
      * @serial
      */
-		// ArrayList包含的元素大小
+    // ArrayList包含的元素大小
     private int size;	
 		
-		// 数组最大容量
-		private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
+    // 数组最大容量
+    private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
-		// 构造器，创建一个指定大小的数组
-		public ArrayList(int initialCapacity) {
+    // 构造器，创建一个指定大小的数组
+    public ArrayList(int initialCapacity) {
         if (initialCapacity > 0) {
             this.elementData = new Object[initialCapacity];
         } else if (initialCapacity == 0) {
-          	// 注意这里传入initialCapacity == 0 的情况下，这里是将EMPTY_ELEMENTDATA赋值给elementData
-          	// 我认为是为了节约内存空间吧，既然传入的是0就没必要给你整内存分配
+            // 注意这里传入initialCapacity == 0 的情况下，这里是将EMPTY_ELEMENTDATA赋值给elementData
+            // 我认为是为了节约内存空间吧，既然传入的是0就没必要给你整内存分配
             this.elementData = EMPTY_ELEMENTDATA;
         } else {
             throw new IllegalArgumentException("Illegal Capacity: "+
                                                initialCapacity);
         }
     }
-		// 无参构造器
-		public ArrayList() {
+    // 无参构造器
+    public ArrayList() {
       	// 将DEFAULTCAPACITY_EMPTY_ELEMENTDATA赋值给elementData
         this.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;
     }
 	
-		// 赋值集合的构造器
-		public ArrayList(Collection<? extends E> c) {
-      	// 转换为数组
+    // 赋值集合的构造器
+    public ArrayList(Collection<? extends E> c) {
+        // 转换为数组
         elementData = c.toArray();
       	// 判断传入的集合是否是空实列
         if ((size = elementData.length) != 0) {
@@ -107,7 +107,7 @@ list.add("test");
                 elementData = Arrays.copyOf(elementData, size, Object[].class);
         } else {
             // replace with empty array.
-          	// 赋值为一个空实列数组
+            // 赋值为一个空实列数组
             this.elementData = EMPTY_ELEMENTDATA;
         }
     }
@@ -116,8 +116,8 @@ list.add("test");
 ##### add
 
 ```java
-	 	// 添加元素
-		public boolean add(E e) {
+   // 添加元素
+   public boolean add(E e) {
       	// 确定数组容量大小
         ensureCapacityInternal(size + 1);  // Increments modCount!!
       	// 将元素添加进数组中
@@ -126,15 +126,15 @@ list.add("test");
         return true;
     }
 		
-		private void ensureCapacityInternal(int minCapacity) {
-				// 这里会分为两步骤
+   private void ensureCapacityInternal(int minCapacity) {
+	// 这里会分为两步骤
       	// 1：calculateCapacity，计算大小
       	// 2：ensureExplicitCapacity是否需要扩容
         ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
     }
 		
-		// 1
-		private static int calculateCapacity(Object[] elementData, int minCapacity) {
+   // 1
+   private static int calculateCapacity(Object[] elementData, int minCapacity) {
       	// 判断elementData是否为默认大小数组实列
       	// 也就是在创建ArrayList时是否是无参构造
         if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
@@ -143,8 +143,8 @@ list.add("test");
         }
         return minCapacity;
     }
-		// 2
-		private void ensureExplicitCapacity(int minCapacity) {
+   // 2
+   private void ensureExplicitCapacity(int minCapacity) {
       	// 记录修改次数，在并发的情况下，会对比此值与预期的值是否相等，如果不想等则会快速失败。
       	// protected transient int modCount = 0;
       	// AbstractList类中
@@ -162,17 +162,17 @@ list.add("test");
       	// 所以此时这里条件不成立
       	// 条件成立的话则进行扩容
         if (minCapacity - elementData.length > 0)
-          	// 扩容
+            // 扩容
             grow(minCapacity);
     }
 		
-		 /**
+    /**
      * Increases the capacity to ensure that it can hold at least the
      * number of elements specified by the minimum capacity argument.
      *
      * @param minCapacity the desired minimum capacity
      */
-		// 扩容
+    // 扩容
     private void grow(int minCapacity) {
         // overflow-conscious code
       	// 旧数组的容量
@@ -199,7 +199,7 @@ list.add("test");
         elementData = Arrays.copyOf(elementData, newCapacity);
     }
 		
- 		private static int hugeCapacity(int minCapacity) {
+   private static int hugeCapacity(int minCapacity) {
       	// 小于则数组越界
         if (minCapacity < 0) // overflow
             throw new OutOfMemoryError();
@@ -208,16 +208,16 @@ list.add("test");
             Integer.MAX_VALUE :
             MAX_ARRAY_SIZE;
     }
-		// copy
-		public static <T> T[] copyOf(T[] original, int newLength) {
+    // copy
+    public static <T> T[] copyOf(T[] original, int newLength) {
       	// original：源数据
       	// newLength：新数组的长度
       	// original.getClass()：源数组class
         return (T[]) copyOf(original, newLength, original.getClass());
     }
 		
-		// 具体copy的细节
-		public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
+   // 具体copy的细节
+   public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
       	// 创建一个新的数组
         @SuppressWarnings("unchecked")
         T[] copy = ((Object)newType == (Object)Object[].class)
@@ -246,7 +246,7 @@ list.add("test");
 接下来我们分析一下remove方法
 
 ```java
-		/**
+    /**
      * Removes the element at the specified position in this list.
      * Shifts any subsequent elements to the left (subtracts one from their
      * indices).
@@ -255,7 +255,7 @@ list.add("test");
      * @return the element that was removed from the list
      * @throws IndexOutOfBoundsException {@inheritDoc}
      */
-		// 删除列表指定位置的元素
+    // 删除列表指定位置的元素
     public E remove(int index) {
       	// 检查指定删除位置是否越界
         rangeCheck(index);
@@ -266,25 +266,25 @@ list.add("test");
 				// 计算需要移动元素的个数
         int numMoved = size - index - 1;
         if (numMoved > 0)
-          	// 左移动
-          	// 这也是为什么ArrayList删除元素为什么效率很低的原因，
+            // 左移动
+            // 这也是为什么ArrayList删除元素为什么效率很低的原因，
             System.arraycopy(elementData, index+1, elementData, index,
                              numMoved);
       	// 将最后一位元素设置为null，因为元素向前移动了一位。
       	// 方便gc更好的回收
         elementData[--size] = null; // clear to let GC do its work
-				// 返回旧值
+	// 返回旧值
         return oldValue;	
     }
 
-		/**
-		 * @param      src      源数组.
+    /**
+     * @param      src      源数组.
      * @param      srcPos   源数组起始位置
      * @param      dest     目标数组
      * @param      destPos  目标数组起始位置
      * @param      length   移动数量
      */
-		public static native void arraycopy(Object src,  int  srcPos,
+     public static native void arraycopy(Object src,  int  srcPos,
                                         Object dest, int destPos,
                                         int length);
 
